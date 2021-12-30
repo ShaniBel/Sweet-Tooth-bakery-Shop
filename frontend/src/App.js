@@ -24,7 +24,7 @@ const App = () => {
     <Router>
       <Header />
       <main>
-        <>
+        <Container id='main-container'>
           <Route path='/order/:id' component={OrderScreen} />
           <Route exact path='/shop' component={ShopScreen} />
           <Route exact path='/shipping' component={ShippingScreen} />
@@ -53,8 +53,8 @@ const App = () => {
             path='/search/:keyword/page/:pageNumber'
             component={ShopScreen}
           />
-          <Route exact path='/' component={HomeScreen} />
-        </>
+        </Container>
+        <Route exact path='/' component={HomeScreen} />
       </main>
       <Footer />
     </Router>

@@ -5,7 +5,7 @@ const Video = () => {
   return (
     <>
       <div className='video'>
-        <video autoPlay={true} muted loop id='myVideo' style={{ width: "100%" }}>
+        <video autoPlay={true} muted id='myVideo' style={{ width: "100%" }}>
           <source src={video} type='video/mp4' />
         </video>
       </div>

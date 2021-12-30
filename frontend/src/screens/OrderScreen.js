@@ -6,15 +6,8 @@ import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
-import {
-  getOrderDetails,
-  payOrder,
-  deliverOrder,
-} from "../actions/orderActions"
-import {
-  ORDER_PAY_RESET,
-  ORDER_DELIVER_RESET,
-} from "../constants/orderConstants"
+import { getOrderDetails, payOrder, deliverOrder } from "../actions/orderActions"
+import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from "../constants/orderConstants"
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
@@ -67,15 +60,7 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true)
       }
     }
-  }, [
-    order,
-    orderId,
-    dispatch,
-    successPay,
-    successDeliver,
-    history,
-    userInfo,
-  ])
+  }, [order, orderId, dispatch, successPay, successDeliver, history, userInfo])
 
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult)
@@ -148,12 +133,7 @@ const OrderScreen = ({ match, history }) => {
                     <ListGroup.Item key={index}>
                       <Row>
                         <Col md={1}>
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            fluid
-                            rounded
-                          />
+                          <Image src={item.image} alt={item.name} fluid rounded />
                         </Col>
                         <Col md={6}>
                           <Link
@@ -164,8 +144,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={5}>
-                          {item.qty} x ${item.price} = $
-                          {item.qty * item.price}
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -209,7 +188,7 @@ const OrderScreen = ({ match, history }) => {
                   <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && (
+              {!order.isPaid && !userInfo.isAdmin && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                   {!sdkReady ? (
@@ -227,7 +206,7 @@ const OrderScreen = ({ match, history }) => {
               {userInfo &&
                 userInfo.isAdmin &&
                 order.isPaid &&
-                !order.isDeliverd && (
+                !order.isDelivered && (
                   <ListGroup.Item>
                     <Button
                       type='button'

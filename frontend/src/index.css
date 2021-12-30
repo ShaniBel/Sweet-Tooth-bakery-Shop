@@ -20,8 +20,66 @@ h2 {
   margin: 0.1rem;
 }
 
-.color-nav {
-  background-color: rgb(177, 48, 160) !important;
+.navbar {
+  background-color: rgb(10, 10, 10) !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* animation to make video disappear */
+.video {
+  -webkit-animation: seconds 1s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 24s;
+  animation: seconds 1s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 24s;
+  position: relative;
+  z-index: 2;
+}
+
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
+
+.shop-now {
+  position: absolute;
+  /* z-index: -2; */
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/a51310af9ef55a33b730f558/pexelsphoto213621.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  color: white !important;
+  border: solid black;
+  padding-top: 10%;
+}
+
+.shop-now h4 {
+  color: #fff;
+}
+
+.search-btn {
+  color: rgb(225, 172, 0) !important;
+  border-color: rgb(225, 172, 0) !important;
 }
 
 .step_link {
@@ -66,4 +124,79 @@ h2 {
 
 .profile-table {
   font-size: 16px !important;
+}
+
+@media screen and (max-width: 1625px) {
+  .shop-now {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-width: 1373px) {
+  .shop-now {
+    height: 75vh;
+  }
+}
+
+@media screen and (max-width: 1275px) {
+  .shop-now {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .shop-now {
+    height: 56vh;
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .shop-now {
+    height: 47vh;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .shop-now {
+    height: 37vh;
+    font-size: 16px;
+    padding-top: 2%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .shop-now {
+    height: 32vh;
+  }
+
+  .shop-now p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .shop-now {
+    height: 23vh;
+  }
+
+  .shop-now p {
+    display: none;
+  }
+
+  .shop-now h4 {
+    padding-top: 5%;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .shop-now {
+    height: 18vh;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .shop-now {
+    display: none;
+  }
 }

@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header>
       <Navbar
-        className='color-nav'
+        className='navbar'
         bg='dark'
         variant='dark'
         expand='xl'
@@ -28,14 +28,11 @@ const Header = () => {
         <Container fluid>
           <Link to='/'>
             <Image src='/images/logo.png' height={100} alt='logo' />
-            <Navbar.Brand>Gadget World</Navbar.Brand>
           </Link>
 
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Route
-              render={({ history }) => <SearchBox history={history} />}
-            />
+            <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>
               <LinkContainer to='/shop'>
                 <Nav.Link>Shop</Nav.Link>
