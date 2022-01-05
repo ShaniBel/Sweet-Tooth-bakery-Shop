@@ -25,6 +25,7 @@ import {
 } from "../constants/userConstants"
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants"
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
+import { CART_CLEAR_ITEMS } from "../constants/cartConstatnts"
 
 import axios from "axios"
 
@@ -76,6 +77,7 @@ export const logout = () => async (dispatch) => {
   dispatch({ type: USER_DETAILS_RESET })
   dispatch({ type: ORDER_LIST_MY_RESET })
   dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
+  dispatch({ type: CART_CLEAR_ITEMS })
 }
 
 export const register = (name, email, password) => async (dispatch) => {

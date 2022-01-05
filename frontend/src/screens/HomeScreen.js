@@ -6,7 +6,6 @@ import { Link } from "react-router-dom"
 import Product from "../components/Product"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
-import ProductCarousel from "../components/ProductCarousel"
 import Meta from "../components/Meta"
 import Video from "../components/HomeScreenVideo/Video"
 import { listTopProducts } from "../actions/productActions"
@@ -38,7 +37,9 @@ const HomeScreen = () => {
                 that no one can resist.
               </p>
 
-              <Button className='btn btn-dark my-1 py-1'>Shop</Button>
+              <Link to='/shop'>
+                <Button className='btn btn-dark my-1 py-1'>Shop</Button>
+              </Link>
             </Col>
           </Row>
         </Container>

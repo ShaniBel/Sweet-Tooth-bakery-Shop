@@ -30,20 +30,15 @@ const ProfileScreen = ({ history }) => {
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy
 
-  if (orders && orders.length !== 0) {
-    console.log(typeof orders[0].deliveredAt)
-    console.log(orders[0].isDelivered)
-  }
-
   useEffect(() => {
     if (!error) {
       if (!userInfo) {
         history.push("/login")
       } else {
+        dispatch(listMyOrders())
         if (!user || !user.name || success) {
           dispatch({ type: USER_UPDATE_PROFILE_RESET })
           dispatch(getUserDetails("profile"))
-          dispatch(listMyOrders())
         } else {
           setName(user.name)
           setEmail(user.email)

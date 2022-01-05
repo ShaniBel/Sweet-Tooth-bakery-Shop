@@ -65,21 +65,16 @@ h2 {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  /* height: 140vh; */
   width: 100%;
   text-align: center;
   color: white !important;
-  border: solid black;
-  padding-top: 10%;
+  padding-top: 18%;
+  padding-bottom: 18%;
 }
 
 .shop-now h4 {
   color: #fff;
-}
-
-.search-btn {
-  color: rgb(225, 172, 0) !important;
-  border-color: rgb(225, 172, 0) !important;
 }
 
 .step_link {
@@ -113,6 +108,10 @@ h2 {
   margin: 0 auto;
 }
 
+.product-card {
+  height: 87%;
+}
+
 .color-footer {
   background-color: rgb(109, 108, 109) !important;
   color: azure;
@@ -126,15 +125,57 @@ h2 {
   font-size: 16px !important;
 }
 
-@media screen and (max-width: 1625px) {
+@media screen and (max-width: 1180px) {
   .shop-now {
-    height: 85vh;
+    padding-top: 15%;
+    padding-bottom: 15%;
   }
 }
 
-@media screen and (max-width: 1373px) {
+@media screen and (max-width: 760px) {
   .shop-now {
-    height: 75vh;
+    padding-top: 8%;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .shop-now {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .shop-now p {
+    display: none;
+  }
+  .shop-now {
+    padding-top: 11%;
+    padding-bottom: 14%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .shop-now p {
+    display: none;
+  }
+  .shop-now {
+    padding-top: 8%;
+    padding-bottom: 8%;
+  }
+}
+
+/* 
+@media screen and (max-width: 1625px) {
+  .shop-now {
+    height: 110vh;
+  }
+}
+
+@media screen and (max-width: 1417px) {
+  .shop-now {
+    height: 77vh;
   }
 }
 
@@ -199,4 +240,4 @@ h2 {
   .shop-now {
     display: none;
   }
-}
+} */
