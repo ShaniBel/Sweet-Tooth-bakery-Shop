@@ -125,10 +125,10 @@ h2 {
   font-size: 16px !important;
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1190px) {
   .shop-now {
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 12%;
+    padding-bottom: 12%;
   }
 }
 

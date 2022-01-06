@@ -13,17 +13,10 @@ export const authUser = asyncHandler(async (req, res) => {
   if (user && (await user.matchPassword(password))) {
     const token = generateToken(user._id)
 
-    // res.cookie("token", token, {
-    //   httpOnly: true,
-    //   secure: true,
-    //   sameSite: "none",
-    // })
-
     res.json({
-      // _id: user._id,
       name: user.name,
-      // email: user.email,
       isAdmin: user.isAdmin,
+      cartItems: user.cartItems,
       token: token,
     })
   } else {
@@ -93,7 +86,7 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name
     user.email = req.body.email || user.email
-    console.log(user.password)
+
     if (req.body.password) {
       user.password = req.body.password
     }
@@ -172,6 +165,27 @@ export const updateUser = asyncHandler(async (req, res) => {
       email: updatedUser.email,
       isAdmin: updatedUser.isAdmin,
     })
+  } else {
+    res.status(404)
+    throw new Error("User not found")
+  }
+})
+
+// @desc Add to user cart
+// @route PUT /api/users/addtocart
+// @access Private
+export const addToUserCart = asyncHandler(async (req, res) => {
+  const cartItems = req.body
+
+  const user = await User.findById(req.user).select("-password")
+
+  console.log(cartItems)
+
+  if (user) {
+    user.cartItems = cartItems
+
+    await user.save()
+    res.status(201).json({ message: "Items added" })
   } else {
     res.status(404)
     throw new Error("User not found")

@@ -50,6 +50,8 @@ export const createOrder = (order) => async (dispatch, getState) => {
       payload: data,
     })
     localStorage.removeItem("cartItems")
+
+    await axios.put(`/api/users/addtocart/`, [], config)
   } catch (error) {
     dispatch({
       type: ORDER_CREATE_FAIL,
@@ -215,11 +217,7 @@ export const deliverOrder = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.put(
-      `/api/orders/${id}/delivered`,
-      {},
-      config
-    )
+    const { data } = await axios.put(`/api/orders/${id}/delivered`, {}, config)
 
     dispatch({
       type: ORDER_DELIVER_SUCCESS,

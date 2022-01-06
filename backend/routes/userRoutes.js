@@ -8,6 +8,7 @@ import {
   deleteUser,
   getUserById,
   updateUser,
+  addToUserCart,
 } from "../controllers/userController.js"
 import { protect, admin } from "../middleware/authMiddleware.js"
 
@@ -19,6 +20,7 @@ router
   .route("/profile")
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile)
+router.route("/addtocart").put(protect, addToUserCart)
 router
   .route("/:id")
   .delete(protect, admin, deleteUser)

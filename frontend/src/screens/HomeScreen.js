@@ -33,8 +33,8 @@ const HomeScreen = () => {
                 {" "}
                 Sweet Tooth bakery offers something for everyone. This is a one of
                 a kind bakery, where the aroma of home-style baking weakens even
-                the strongest will. We a wide variety of freshly baked goods daily
-                that no one can resist.
+                the strongest will. We have a wide variety of freshly baked goods
+                daily that no one can resist.
               </p>
 
               <Link to='/shop'>

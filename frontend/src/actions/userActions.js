@@ -26,6 +26,7 @@ import {
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants"
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
 import { CART_CLEAR_ITEMS } from "../constants/cartConstatnts"
+import { initialCart } from "../actions/cartActions"
 
 import axios from "axios"
 
@@ -56,6 +57,9 @@ export const login = (email, password) => async (dispatch) => {
     })
 
     localStorage.setItem("userInfo", JSON.stringify(data))
+    localStorage.setItem("cartItems", JSON.stringify(data.cartItems))
+
+    dispatch(initialCart())
   } catch (error) {
     dispatch({
       type: USER_LOGIN_FAIL,
@@ -67,7 +71,24 @@ export const login = (email, password) => async (dispatch) => {
   }
 }
 
-export const logout = () => async (dispatch) => {
+export const logout = () => async (dispatch, getState) => {
+  const {
+    userLogin: { userInfo },
+  } = getState()
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userInfo.token}`,
+    },
+  }
+
+  const cartItemsFromStorage = localStorage.getItem("cartItems")
+    ? JSON.parse(localStorage.getItem("cartItems"))
+    : []
+
+  await axios.put(`/api/users/addtocart/`, cartItemsFromStorage, config)
+
   localStorage.removeItem("userInfo")
   localStorage.removeItem("cartItems")
   localStorage.removeItem("shippingAddress")
