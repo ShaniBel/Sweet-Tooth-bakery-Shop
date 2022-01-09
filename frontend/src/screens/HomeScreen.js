@@ -7,6 +7,7 @@ import Product from "../components/Product"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import Meta from "../components/Meta"
+import ProductCarousel from "../components/ProductCarousel"
 import Video from "../components/HomeScreenVideo/Video"
 import { listTopProducts } from "../actions/productActions"
 
@@ -24,8 +25,8 @@ const HomeScreen = () => {
     <>
       <Meta />
 
-      <div className='shop-now'>
-        <Container fluid>
+      {/* <div className='test'>
+        <Container className='shop-now'>
           <Row className='justify-content-md-end'>
             <Col lg={6}>
               <h4 className=''>Visit Our Online Shop</h4>
@@ -44,9 +45,10 @@ const HomeScreen = () => {
           </Row>
         </Container>
       </div>
+      <Video /> */}
+      <Container className='top-products py-3'>
+        <ProductCarousel />
 
-      <Video />
-      <Container className='top-products'>
         <h2>Top Rated products</h2>
         {loading ? (
           <Loader />

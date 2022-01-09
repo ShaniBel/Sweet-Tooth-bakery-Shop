@@ -37,12 +37,6 @@ const Header = () => {
               <LinkContainer to='/shop'>
                 <Nav.Link>Shop</Nav.Link>
               </LinkContainer>
-              {/* <LinkContainer to='/contactUs'>
-                <Nav.Link>Contact Us</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to='/Blog'>
-                <Nav.Link>Blog</Nav.Link>
-              </LinkContainer> */}
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Cart

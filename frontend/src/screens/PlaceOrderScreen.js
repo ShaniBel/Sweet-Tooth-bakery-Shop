@@ -1,6 +1,14 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap"
+import {
+  Container,
+  Row,
+  Col,
+  Image,
+  ListGroup,
+  Card,
+  Button,
+} from "react-bootstrap"
 import { Link } from "react-router-dom"
 import Message from "../components/Message"
 import CheckOutSteps from "../components/CheckOutSteps"
@@ -52,7 +60,7 @@ const PlaceOrderScreen = ({ history }) => {
     // eslint-disable-next-line
   }, [history, success])
   return (
-    <>
+    <Container className='py-4'>
       <CheckOutSteps step1 step2 step3 step4 />
       <Row>
         <Col md={8}>
@@ -62,8 +70,7 @@ const PlaceOrderScreen = ({ history }) => {
               <p>
                 <strong>Address: </strong>&nbsp;
                 {cart.shippingAddress.address}, {cart.shippingAddress.city},{" "}
-                {cart.shippingAddress.postalCode},{" "}
-                {cart.shippingAddress.country}
+                {cart.shippingAddress.postalCode}, {cart.shippingAddress.country}
               </p>
             </ListGroup.Item>
 
@@ -83,12 +90,7 @@ const PlaceOrderScreen = ({ history }) => {
                     <ListGroup.Item key={index}>
                       <Row>
                         <Col md={1}>
-                          <Image
-                            src={item.image}
-                            alt={item.name}
-                            fluid
-                            rounded
-                          />
+                          <Image src={item.image} alt={item.name} fluid rounded />
                         </Col>
                         <Col md={6}>
                           <Link
@@ -99,8 +101,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={5}>
-                          {item.qty} x ${item.price} = $
-                          {item.qty * item.price}
+                          {item.qty} x ${item.price} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -163,7 +164,7 @@ const PlaceOrderScreen = ({ history }) => {
           </Card>
         </Col>
       </Row>
-    </>
+    </Container>
   )
 }
 

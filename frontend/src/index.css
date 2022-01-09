@@ -35,7 +35,7 @@ h2 {
   animation-iteration-count: 1;
   animation-delay: 24s;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
 @-webkit-keyframes seconds {
@@ -59,18 +59,15 @@ h2 {
 
 .shop-now {
   position: absolute;
-  /* z-index: -2; */
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/a51310af9ef55a33b730f558/pexelsphoto213621.png");
-  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 140vh; */
+  height: 80vh;
   width: 100%;
   text-align: center;
   color: white !important;
   padding-top: 18%;
-  padding-bottom: 18%;
 }
 
 .shop-now h4 {
@@ -97,9 +94,7 @@ h2 {
 }
 
 .carousel img {
-  height: 300px;
-  padding: 30px;
-  margin: 40px;
+  height: 100%;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -125,10 +120,40 @@ h2 {
   font-size: 16px !important;
 }
 
-@media screen and (max-width: 1190px) {
+.not-found {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://templatekits.wpshow.me/dough-boi-bakery/wp-content/uploads/sites/2/elementor/thumbs/pexels-julia-miller-3646863-p0q5z8mdyv2phr64m10zt1z5ommvdbvjupmha34hew.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+}
+
+.not-found-title {
+  z-index: 5;
+  position: absolute;
+  text-align: center;
+  margin-top: 12%;
+}
+.not-found-title h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white !important;
+  font-size: 3rem;
+}
+
+.not-found-title p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white !important;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1490px) {
   .shop-now {
-    padding-top: 12%;
-    padding-bottom: 12%;
+    height: 70vh;
+    width: 75%;
   }
 }
 

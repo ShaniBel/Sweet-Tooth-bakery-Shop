@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import { Container } from "react-bootstrap"
 import HomeScreen from "./screens/HomeScreen"
 import ProductScreen from "./screens/ProductScreen"
 import CartScreen from "./screens/CartScreen"
@@ -18,13 +17,14 @@ import UserEditScreen from "./screens/UserEditScreen"
 import ProductListScreen from "./screens/ProductListScreen"
 import ProductEditScreen from "./screens/ProductEditScreen"
 import OrderListScreen from "./screens/OrderListScreen"
+import PageNotFoundScreen from "./screens/PageNotFoundScreen"
 
 const App = () => {
   return (
     <Router>
       <Header />
       <main>
-        <Container id='main-container'>
+        <Switch>
           <Route path='/order/:id' component={OrderScreen} />
           <Route exact path='/shop' component={ShopScreen} />
           <Route exact path='/shipping' component={ShippingScreen} />
@@ -53,8 +53,10 @@ const App = () => {
             path='/search/:keyword/page/:pageNumber'
             component={ShopScreen}
           />
-        </Container>
-        <Route exact path='/' component={HomeScreen} />
+
+          <Route exact path='/' component={HomeScreen} />
+          <Route exact path='*' component={PageNotFoundScreen} />
+        </Switch>
       </main>
       <Footer />
     </Router>
