@@ -181,8 +181,6 @@ export const addToUserCart = asyncHandler(async (req, res) => {
 
   const user = await User.findById(req.user).select("-password")
 
-  console.log(cartItems)
-
   if (user) {
     user.cartItems = cartItems
 

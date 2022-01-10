@@ -12,9 +12,9 @@ const Meta = ({ title, description, keywords }) => {
 }
 
 Meta.defaultProps = {
-  title: "Welcom To Sweet Tooth Bakery",
-  keywords: "electronics, gadegets, buy electronics, cheap electronics",
-  description: "We sell the best products for cheap",
+  title: "Welcome To Sweet Tooth Bakery",
+  keywords: "cakes, cookies, muffins",
+  description: "We sell the best sweet baked goods",
 }
 
 export default Meta
