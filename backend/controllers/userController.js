@@ -1,4 +1,5 @@
 import User from "../models/userModel.js"
+import Order from "../models/orderModel.js"
 import asyncHandler from "express-async-handler"
 import generateToken from "../utils/generateToken.js"
 
@@ -110,7 +111,7 @@ export const updateUserProfile = asyncHandler(async (req, res) => {
 // @route GET /api/users
 // @access Private/Admin
 export const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({})
+  const users = await User.find({}).sort({ _id: 1 })
   res.json(users)
 })
 
@@ -121,6 +122,7 @@ export const deleteUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id)
 
   if (user) {
+    await Order.deleteMany({ user: user._id })
     await user.remove()
     res.json({ message: "User removed" })
   } else {

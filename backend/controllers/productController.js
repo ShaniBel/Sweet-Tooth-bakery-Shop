@@ -25,6 +25,7 @@ export const getProducts = asyncHandler(async (req, res) => {
   // limit results to page size
   // skip --> what products for each page (we skip what we already showed in prev pages)
   const products = await Product.find({ ...keyword })
+    .sort({ _id: 1 })
     .limit(pageSize)
     .skip(pageSize * (page - 1))
 

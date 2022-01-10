@@ -6,7 +6,7 @@ const PageNotFoundScreen = () => {
       <div className='not-found-title'>
         <h6>404</h6>
         <h6>Oops...</h6>
-        <p>The page your'e trying to reach doesn't exist.</p>
+        <p>The page you're trying to reach doesn't exist.</p>
       </div>
     </div>
   )
