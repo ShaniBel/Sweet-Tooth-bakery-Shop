@@ -6,19 +6,24 @@
 
 ## Features
 
-- Full featured shopping cart
+backend:
+
+- built using MVC architecture
+- Authentication & Authorization of users with email, password and a token
+- Full API for frontend requests
+- Connection to MongoDB
+- Database seeder (products & users)
+
+frontend:
+
+- Shopping cart & Checkout process (shipping, payment method, placing an order)
 - Product reviews and ratings
 - Top products carousel
 - Product pagination
-- Product search feature
+- Product search
 - User profile with orders
-- Admin product management
-- Admin user management
-- Admin Order details page
-- Mark orders as delivered option
-- Checkout process (shipping, payment method, etc)
+- Admin dashboard with CRUD abilities: product management, user management, Order management
 - PayPal / credit card integration
-- Database seeder (products & users)
 
 ## Usage
 
@@ -28,22 +33,25 @@ I use ECMAScript Modules in the backend in this project. Be sure to have at leas
 
 ### Env Variables
 
-Create a .env file in then root and add the following
+Create a .env file in the root and add the following
 
 ```
 NODE_ENV = development
 PORT = 5000
-MONGO_URI = your mongodb uri
+MONGO_URI = mongodb uri**
 JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = your paypal client id
+PAYPAL_CLIENT_ID = paypal client id**
 ```
+
+\*\*for potential employers : you can reach me for these details.
 
 ### Install Dependencies (frontend & backend)
 
 ```
-npm install
-cd frontend
-npm install
+1. git clone <copy this repo>
+2. npm install
+3. cd frontend
+4. npm install
 ```
 
 ### Run
@@ -54,6 +62,9 @@ npm run dev
 
 # Run backend only
 npm run server
+
+# Run frontend only
+npm run client
 ```
 
 ## Build & Deploy
