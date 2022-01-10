@@ -2,9 +2,7 @@
 
 > eCommerce platform built with the MERN stack & Redux.
 
-This is the course project for my [MERN eCommerce From Scratch](https://www.udemy.com/course/mern-ecommerce) course
-
-![screenshot](https://github.com/bradtraversy/proshop_mern/blob/master/uploads/sweet-tooth-bakery.png)
+![screenshot](https://github.com/ShaniBel/Sweet-Tooth-bakery-Shop/blob/main/uploads/sweet-tooth-bakery.png)
 
 ## Features
 
