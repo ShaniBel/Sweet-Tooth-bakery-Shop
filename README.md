@@ -33,17 +33,21 @@ I use ECMAScript Modules in the backend in this project. Be sure to have at leas
 
 ### Env Variables
 
-Create a .env file in the root and add the following
+Create a .env file in the root and add the following:
 
 ```
 NODE_ENV = development
 PORT = 5000
-MONGO_URI = mongodb uri**
+MONGO_URI = mongodb uri*
 JWT_SECRET = 'abc123'
-PAYPAL_CLIENT_ID = paypal client id**
+PAYPAL_CLIENT_ID = paypal client id*
+CLOUDINARY_NAME = cloudinary name**
+CLOUDINARY_API_KEY = cloudinary api key**
+CLOUDINARY_API_SECRET = cloudinary api secret**
 ```
 
-\*\*for potential employers : you can reach me for these details.
+\* Create a MongoDB account and include your uri and use the seeder script to update your database. Create a paypal sandbox account and include your paypal client id.
+\*\*Create a cloudinary account and insert your cloudinary name, cloudinary api key, cloudinary api secret to be able to upload images from the admin edit products.
 
 ### Install Dependencies (frontend & backend)
 
@@ -70,16 +74,16 @@ npm run client
 ## Build & Deploy
 
 ```
-# Create frontend prod build
+# Create frontend production build
 cd frontend
 npm run build
 ```
 
-There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku
+There is a Heroku postbuild script, so if you push to Heroku, no need to build manually for deployment to Heroku.
 
 ### Seed Database
 
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
+You can use the following commands to seed the database with some sample users and products as well as destroy all data.
 
 ```
 # Import data
@@ -104,4 +108,4 @@ jane@example.com (Customer)
 
 ## License
 
-The MIT License
+The MIT License.

@@ -35,8 +35,6 @@ const upload = multer({
   },
 })
 
-// cloudinary.uploader.upload()
-
 // @desc Upload an image
 // @route POST /api/upload
 // @access Private/Admin
