@@ -27,7 +27,11 @@ const Header = () => {
       >
         <Container fluid>
           <Link to='/'>
-            <Image src='/images/logo.png' height={100} alt='logo' />
+            <Image
+              src='https://res.cloudinary.com/sweet-tooth-bakery/image/upload/v1641981915/logo_oroufp.png'
+              height={100}
+              alt='logo'
+            />
           </Link>
 
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
