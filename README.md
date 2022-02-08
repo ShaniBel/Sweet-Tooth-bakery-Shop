@@ -11,18 +11,19 @@ backend:
 - built using MVC architecture
 - Authentication & Authorization of users with email, password and a token
 - Full API for frontend requests
+- Different kind of users with different authorization privileges: admin and client.
 - Connection to MongoDB
 - Database seeder (products & users)
 
 frontend:
 
 - Shopping cart & Checkout process (shipping, payment method, placing an order)
+- Admin dashboard with CRUD abilities: product management, user management, Order management
+- Profile screen with user information, editable by the user.
 - Product reviews and ratings
 - Top products carousel
 - Product pagination
 - Product search
-- User profile with orders
-- Admin dashboard with CRUD abilities: product management, user management, Order management
 - PayPal / credit card integration
 
 ## Usage
