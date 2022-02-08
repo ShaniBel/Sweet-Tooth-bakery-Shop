@@ -2,7 +2,23 @@
 
 > eCommerce platform built with the MERN stack & Redux.
 
+Live website: https://sweettoothbakeryapp.herokuapp.com
+
+### Home page
+
 ![screenshot](https://github.com/ShaniBel/Sweet-Tooth-bakery-Shop/blob/main/uploads/sweet-tooth-bakery.png)
+
+### Shop Page
+
+![screenshot](https://github.com/ShaniBel/Sweet-Tooth-bakery-Shop/blob/main/uploads/shop_screen.png)
+
+### Admin dashboard
+
+![screenshot](https://github.com/ShaniBel/Sweet-Tooth-bakery-Shop/blob/main/uploads/admin_dashboard.png)
+
+### User Profile
+
+![screenshot](https://github.com/ShaniBel/Sweet-Tooth-bakery-Shop/blob/main/uploads/profile_screen.png)
 
 ## Features
 
